@@ -25,7 +25,7 @@ internal class EncryptionModule(private val context: Context, private val common
     }
 
     fun providesSecurable(): Securable {
-        if (commonModule.provideBuildConfigUtil().isOSBelow(Build.VERSION_CODES.M)) {
+        if (commonModule.provideBuildConfigUtil().isOSBelow(Build.VERSION_CODES.N)) {
             return RsaWithDeprecatedAes(
                 commonModule.providesSecurityPrefs(),
                 providesRsaSecurable(),
